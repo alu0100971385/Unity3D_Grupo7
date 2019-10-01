@@ -2,7 +2,7 @@
 
 **Resumen de la historia**: Un viajero se despierta en lo que parece ser un futuro distópico. Debe intentar sobrevivir en un mundo hostil donde la civilización brilla por su ausencia. Todo parece desértico, a excepción de una cosa: Una torre con una luz en la parte más alta, cuya punta se puede observar desde la lejanía. Esta punta coincide perfectamente con la permanente luna llena que existe en el cielo.
 
-**Apariencia**:
+**Apariencia**: En tres dimensiones.
 
 **Objetivo del jugador**: Sobrevivir, llegar a La Torre y descubrir los secretos del mundo.
 
@@ -12,11 +12,11 @@
 
 **Acciones**: El usuario puede atacar, bloquear ataques, esprintar, moverse en las cuatro direcciones y saltar, además de acciones especiales que se hacen de manera puntual.
 
-**Animaciones**:
+**Animaciones**: Animaciones basadas en FBX
 
-**El audio**:
+**El audio**: Música de piano.
 
-**La IA**:
+**La IA**: Los enemigos tienen sensores que detectan al usuario y lo persiguen para intentar matarlo.
 
 **Condiciones para ganar**: En cada parte, eliminar a todos los enemigos sin agotar las vidas.
 
