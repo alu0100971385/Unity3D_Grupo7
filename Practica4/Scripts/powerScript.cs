@@ -1,12 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class powerScript : MonoBehaviour
 {
-  public int collisionCount;
-  public Text texto;
+    public int collisionCount;
+    public Text texto;
+
+    delegate void PowerDelegate();
+    PowerDelegate powerDelegate;
 
     void Start()
     {
@@ -14,31 +17,53 @@ public class powerScript : MonoBehaviour
 
     }
 
+    void powerStay()
+    {
+        Debug.Log(collisionCount);
+    }
+
+    void powerUp()
+    {
+        collisionCount++;
+        texto.text = collisionCount.ToString();
+        Debug.Log(collisionCount);
+    }
+
+    void powerDown()
+    {
+        collisionCount--;
+
+        if (collisionCount < 0)
+            collisionCount = 0;
+
+        texto.text = collisionCount.ToString();
+        Debug.Log(collisionCount);
+    }
+
     void OnCollisionEnter(Collision collision)
     {
 
 
-        if(collision.gameObject.tag == "Coin" )
+        if (collision.gameObject.tag == "Coin")
         {
- 
-            collisionCount++;
-            texto.text = collisionCount.ToString();
-            Debug.Log(collisionCount);
+
+            powerDelegate = powerUp;
 
         }
 
-        
-        if(collision.gameObject.tag == "Mummy" )
+        else
+        if (collision.gameObject.tag == "Mummy")
         {
- 
-            collisionCount--;
 
-            if(collisionCount<0)
-                collisionCount = 0;
-
-            texto.text = collisionCount.ToString();
-            Debug.Log(collisionCount);
+            powerDelegate = powerDown;
 
         }
+        else
+        {
+            powerDelegate = powerStay;
+        }
+
+        powerDelegate();
     }
 }
+
